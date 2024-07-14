@@ -1,0 +1,68 @@
+#1
+lst = ["A", "B", "C", "D", "E", "F", "G", "L", "Q", "U"]
+def bolish_listi(son, lst):
+    natija = [lst[i:i + son] for i in range(0, len(lst), son)]
+    return natija
+oraliq = 3
+korsatish = bolish_listi(oraliq, lst)
+print(korsatish)
+oraliq = 7
+korsatish = bolish_listi(oraliq, lst)
+print(korsatish)
+
+#2
+def matem(masala):
+    sonlar = masala.split()
+    natija = int(sonlar[0])
+    hp = None
+
+    for son in sonlar[1:]:
+        if son.isdigit():
+            if hp == '*':
+                natija *= int(son)
+            elif hp == '+':
+                natija += int(son)
+            elif hp == '-':
+                natija -= int(son)
+        elif son in ('*', '+', '-'):
+            hp = son
+
+    return f"{masala.replace('?', '')}{natija}"
+kirish = "3 * 5 + 4 * 1 + 6 = ?"
+chiqish = matem(kirish)
+print(chiqish)
+
+#3
+ls = [1, 1, 2, 3, 4, 2, 3, 4, 2, 1, 2, 3]
+def karl_gauss(lst):
+    sonlar = {}
+    for son in lst:
+        if son in sonlar:
+            sonlar[son] += 1
+        else:
+            sonlar[son] = 1
+    return sonlar
+
+chiqish = karl_gauss(ls)
+print(chiqish)
+#Karl Gaus = Matematika "Qiroli".
+
+#4
+mashinalar = [
+    {"model": "RDX", "yil": 2009},
+    {"model": "LS", "yil": 2000},
+    {"model": "GLK-Class", "yil": 2010},
+    {"model": "Express 1500", "yil": 2005},
+    {"model": "LR2", "yil": 2008},
+    {"model": "XF", "yil": 2012},
+    {"model": "MR2", "yil": 2005},
+    {"model": "Malibu", "yil": 2007},
+    {"model": "M-Class", "yil": 2010},
+    {"model": "Routan", "yil": 2011}
+]
+def sortirovka(mashinalar):
+    return sorted(mashinalar, key=lambda x: x["yil"])
+
+chiqish = sortirovka(mashinalar)
+for m in chiqish:
+    print(m)

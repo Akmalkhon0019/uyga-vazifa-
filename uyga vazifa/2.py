@@ -15,7 +15,6 @@ def matem(masala):
             hp = son
 
     return f"{masala.replace('?', '')}{natija}"
-
 kirish = "3 * 5 + 4 * 1 + 6 = ?"
 chiqish = matem(kirish)
 print(chiqish)
